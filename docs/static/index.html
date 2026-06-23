@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>True Monad 工作台</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">真</span><div><strong>True Monad</strong><small>专注式工作台</small></div></div>
+      <nav id="nav">
+        <button class="nav-item active" data-view="focus"><span>◉</span>今日聚焦</button>
+        <button class="nav-item" data-view="monad"><span>◇</span>认知环境</button>
+        <button class="nav-item" data-view="interactions"><span>⌁</span>待决事项 <b id="pending-count">0</b></button>
+        <button class="nav-item" data-view="instructions"><span>＋</span>指令队列 <b id="instruction-count">0</b></button>
+        <button class="nav-item" data-view="outputs"><span>↗</span>本轮产出</button>
+        <button class="nav-item" data-view="history"><span>◷</span>历史归档</button>
+        <button class="nav-item" data-view="system"><span>⚙</span>系统状态</button>
+      </nav>
+      <div class="sidebar-foot"><i id="health-dot"></i><span id="health-text">正在连接…</span></div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div><p class="eyebrow" id="view-eyebrow">工作空间</p><h1 id="view-title">今日聚焦</h1></div>
+        <div class="top-actions">
+          <label class="search"><span>⌕</span><input id="global-search" placeholder="搜索当前视图" autocomplete="off"></label>
+          <button class="button ghost" id="refresh">刷新</button>
+          <button class="button primary" id="new-instruction">新建指令</button>
+        </div>
+      </header>
+
+      <section id="view" class="view" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <dialog id="editor-dialog">
+    <form method="dialog" class="dialog-card" id="editor-form">
+      <div class="dialog-head"><div><p class="eyebrow">文件即契约</p><h2 id="editor-title">新建指令</h2></div><button class="icon-button" value="cancel" aria-label="关闭">×</button></div>
+      <div class="field-row">
+        <label>类型<select id="editor-kind"><option value="I">I · 原始指令</option><option value="Q">Q · 问题批复</option><option value="A">A · 建议批复</option><option value="T">T · 待办反馈</option></select></label>
+        <label id="filename-field">文件名<input id="editor-filename" placeholder="I-001.md"></label>
+      </div>
+      <label>内容<textarea id="editor-content" rows="16" placeholder="保持原始意图，直接写下需要 AI 处理的内容。"></textarea></label>
+      <div class="dialog-actions"><span id="save-state">尚未保存</span><button class="button ghost" value="cancel">取消</button><button class="button primary" id="save-instruction" value="default">保存到 next/</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="response-dialog">
+    <form method="dialog" class="dialog-card" id="response-form">
+      <div class="dialog-head"><div><p class="eyebrow">结清未决状态</p><h2 id="response-title">回复</h2></div><button class="icon-button" value="cancel">×</button></div>
+      <div class="source-box" id="response-source"></div>
+      <label>你的批复<textarea id="response-content" rows="10" placeholder="写下明确的决定、补充信息或完成反馈。"></textarea></label>
+      <div class="dialog-actions"><span>将生成对应的 Q/A/T 文件</span><button class="button ghost" value="cancel">取消</button><button class="button primary" id="save-response" value="default">生成回复</button></div>
+    </form>
+  </dialog>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
