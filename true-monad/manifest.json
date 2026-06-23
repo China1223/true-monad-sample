@@ -1,0 +1,19 @@
+{
+  "framework": "true-monad",
+  "framework_version": "0.2.0",
+  "schema_version": 1,
+  "installation_mode": "project-local",
+  "runtime_authority": "true-monad/",
+  "managed_paths": [
+    "AGENTS.md",
+    "true-monad/",
+    "docs/reference/",
+    "docs/topic/",
+    "docs/design/"
+  ],
+  "service": {
+    "entrypoint": "true-monad/service/server.py",
+    "host": "127.0.0.1",
+    "port": 8051
+  }
+}

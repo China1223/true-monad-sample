@@ -1,0 +1,29 @@
+round_id,archived_at,compressed_monad,instruction_count,output_count
+R-20260623-183140,2026-06-23T18:31:40+08:00,"# Compressed Monad
+
+## 当前任务
+
+- 正在进行 True Monad 最小归档链路测试。
+- 已读取 `next/I-001.md` 并完成本轮规定的最小产出。
+- 当前状态：待上层流程检查并决定是否执行归档；本轮未归档，也未清理 `next/` 或 `end/`。
+",1,1
+R-20260623-192021,2026-06-23T19:20:21+08:00,"# Compressed Monad
+
+## 项目定位
+
+- True Monad 当前是项目本地固定版本的人机协作框架，正式 Skill/Plugin 打包推迟到功能稳定之后。
+- 项目内 `true-monad/` 是 Service、脚本和文件契约的唯一运行权威；外部 Skill 不得静默覆盖。
+
+## 已确认决策
+
+- 根目录四份原始设计文档继续保留；后续设计讨论进入 `docs/design/`。
+- `docs/reference/` 保存稳定参考资料，`docs/topic/` 保存主题材料。
+- `next/current/end` 默认不进入 Git；框架代码、配置、设计文档和 archive 进入 Git。
+- 每轮直接聊天指令必须先逐字落入 `true-monad/next/`，再执行实质工作。
+
+## 当前状态
+
+- 从首版普通应用到项目本地 `true-monad/` 目录的迁移和回归验证已经完成，等待归档。
+- 自动测试、文件契约检查和真实浏览器路径均通过；工作台读取的运行根目录为项目内 `true-monad/`。
+- 此前未逐轮记录指令的根因已经确认：聊天绕过 next、`agent.md` 未被自动加载、旧契约缺少聊天落盘步骤、Service 与 Codex 会话没有桥接。
+",1,1

@@ -1,9 +1,0 @@
-round_id,archived_at,compressed_monad,instruction_count,output_count
-R-20260623-183140,2026-06-23T18:31:40+08:00,"# Compressed Monad
-
-## 当前任务
-
-- 正在进行 True Monad 最小归档链路测试。
-- 已读取 `next/I-001.md` 并完成本轮规定的最小产出。
-- 当前状态：待上层流程检查并决定是否执行归档；本轮未归档，也未清理 `next/` 或 `end/`。
-",1,1

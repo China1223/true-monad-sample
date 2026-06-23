@@ -1,0 +1,18 @@
+# 未归档的当前轮次不进入 Git
+next/**
+current/**
+end/**
+
+# 保留目录骨架
+!next/.gitkeep
+!current/.gitkeep
+!end/.gitkeep
+
+# 本地运行状态
+runtime/**
+*.pid
+*.lock
+*.log
+trigger.signal
+__pycache__/
+*.py[cod]

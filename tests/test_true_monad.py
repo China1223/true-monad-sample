@@ -6,7 +6,7 @@ from pathlib import Path
 from unittest import mock
 
 
-MODULE_PATH = Path(__file__).resolve().parents[1] / "docs" / "true_monad.py"
+MODULE_PATH = Path(__file__).resolve().parents[1] / "true-monad" / "service" / "true_monad.py"
 SPEC = importlib.util.spec_from_file_location("true_monad", str(MODULE_PATH))
 tm = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(tm)

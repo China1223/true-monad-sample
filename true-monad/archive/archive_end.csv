@@ -1,0 +1,16 @@
+round_id,archived_at,filename,content
+R-20260623-183140,2026-06-23T18:31:40+08:00,summary.md,"# 测试结果
+
+最小 slave 测试已完成：成功读取 `next/I-001.md`，并按文件契约写入指令理解、认知状态、本轮结果和工作记录。未执行归档或清理。
+"
+R-20260623-192021,2026-06-23T19:20:21+08:00,summary.md,"# 本轮重构结果
+
+True Monad 已迁入项目本地 `true-monad/` 目录。Service、静态资源、归档脚本、运行状态和历史归档均改用项目本地路径。
+
+- 建立了 `AGENTS.md`、`VERSION`、`manifest.json`、`WORKFLOW.md` 和嵌套 `.gitignore`。
+- 建立了 `docs/design/`、`docs/reference/`、`docs/topic/` 及根目录 README。
+- 整理了多轮讨论、原始需求、架构取舍、指令漏记根因和后续计划。
+- 本轮用户原始指令已经逐字写入 next，指令理解、Work 和产出均已形成。
+- 4 项自动测试通过，Python 编译检查通过，文件契约检查通过。
+- 浏览器确认运行根目录为项目内 `true-monad/`，本轮指令和产出可见，控制台无错误。
+"
