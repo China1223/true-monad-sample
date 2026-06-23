@@ -10,6 +10,8 @@
 
 首版方案：`current/compressed_monad.md` 仍不移动、不清空；每次归档额外把只读快照写入 `archive/archive_rounds.csv`。这不是将当前文件归档，而是为轮次追溯保存当时状态。
 
+实际测试补充：归档发生在 AI 完成本轮写入之后，因此保留文件可能仍显示“等待归档”。`agent.md` 已要求下一位 AI 启动时用最新 `archive_rounds.csv` 校正轮次状态。正式版可考虑把“归档事务状态”从认知正文中拆成 Python 管理的独立元数据，彻底消除职责冲突。
+
 ### 2. 指令理解缺少本轮物理载体
 
 原设计只说明它最终进入 `archive_instruction_understanding.csv`，没有定义归档前由谁、写到哪里，因此 Python 无法可靠找到待归档内容。
